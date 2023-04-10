@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+.btn {
+    margin: 10px 5px 0 0!important
+}
+a{
+    cursor: pointer;
+}
+.dropdown.open{
+    .dropdown-menu{display: block;}
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu{
+        right: 0;
+    }
