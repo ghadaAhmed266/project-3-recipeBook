@@ -1,17 +1,15 @@
 <div class="row">
     <div class="col-xs-12">
-        <a class="card clearfix row" style="cursor: pointer" (click)="OnSelectItem()">
+        <div class="card clearfix row" style="cursor: pointer" [routerLink]="[index]" routerLinkActive="active">
             <div class="card-body">
                 <div class="row" style="align-items: center;">
-                    <div class="col-md-10">
+                    <div class="col">
                         <h4 class="card-title">{{receipeItem.name }}</h4>
                          <p class="card-text">{{ receipeItem.description }}</p>
                     </div>
-                    <div class="col-md-2" >
-                        <span class="card-img"><img src="{{ receipeItem.imagePath }}" alt="" class="img-responsive" ></span>                    
-                    </div>
+                    <img class="card-img col-md-3" src="{{ receipeItem.imagePath }}" style="max-width: 100px;">
                 </div>
             </div>
-        </a>
+        </div>
     </div>
 </div>

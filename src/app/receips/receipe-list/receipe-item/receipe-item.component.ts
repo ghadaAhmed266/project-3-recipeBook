@@ -1,6 +1,5 @@
 import { Component, Input ,Output,EventEmitter} from '@angular/core';
 import { receipe } from '../../receipe.model';
-import { ReceipeService } from '../../receipe.service';
 
 @Component({
   selector: 'app-receipe-item',
@@ -9,10 +8,5 @@ import { ReceipeService } from '../../receipe.service';
 })
 export class ReceipeItemComponent {
   @Input() receipeItem:receipe;
-  OnSelectItem()
-  {
-    this.receipeService.receipeSelected.emit(this.receipeItem);
-  }
-  constructor(private receipeService:ReceipeService)
-  {}
+  @Input() index:number;
 }

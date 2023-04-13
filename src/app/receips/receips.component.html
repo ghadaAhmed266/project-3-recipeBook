@@ -1,13 +1,14 @@
 <div class="row">
     <div class="col-md-5"><app-receipe-list ></app-receipe-list></div>
     <div class="col-md-7">
-        <app-receipe-detail 
-        *ngIf="receipeSelectedNow.name; else infoText"
+        <router-outlet></router-outlet>
+        <!--app-receipe-detail 
+        *ngIf="receipeSelectedNow; else infoText"
         [receipe]="receipeSelectedNow"
         ></app-receipe-detail>
         <ng-template #infoText>
             <p>Please Select a Receipe !</p>
-        </ng-template>
+        </ng-template-->
     </div>
 </div>
 

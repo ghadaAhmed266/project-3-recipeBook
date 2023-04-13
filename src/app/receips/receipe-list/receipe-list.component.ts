@@ -7,10 +7,9 @@ import { ReceipeService } from '../receipe.service';
   styleUrls: ['./receipe-list.component.scss']
 })
 export class ReceipeListComponent implements OnInit{
-  test:string="test";
   receips:receipe[];
-constructor(private receipeService:ReceipeService){}
-ngOnInit(): void {
-  this.receips=this.receipeService.getReceipe();
-}
+  constructor(private receipeService:ReceipeService){}
+  ngOnInit() {
+    this.receips=this.receipeService.getReceipe();
+  }
 }

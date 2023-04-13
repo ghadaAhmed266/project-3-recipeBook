@@ -1,5 +1,6 @@
 import { NumberFormatStyle } from '@angular/common';
-import { Component,ViewChild ,ElementRef,OnInit} from '@angular/core';
+import { Component,OnInit} from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ingredient } from 'src/app/shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
 
@@ -9,18 +10,15 @@ import { ShoppingListService } from '../shopping-list.service';
   styleUrls: ['./shopping-edit.component.scss']
 })
 export class ShoppingEditComponent implements OnInit{
-  @ViewChild('name') nameVal:ElementRef;
-  @ViewChild('amount') amountVal:ElementRef;
   constructor(private shlservice:ShoppingListService){
   }
  
   ngOnInit(): void {
     
   }
-   OnAdd()
+   OnAdd(form:NgForm)
   {
-    const na=this.nameVal.nativeElement.value;
-    const am=this.amountVal.nativeElement.value;
-    this.shlservice.addIngredient(new ingredient(na,am));
+    const value=form.value;
+    this.shlservice.addIngredient(new ingredient(value.name,+value.amount));
   }
 }

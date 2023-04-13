@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ReceipeStartComponent } from './receips/receipe-start/receipe-start.component';
 import { ShoppingListService } from './shoping-list/shopping-list.service';
+import { ReceipeEditComponent } from './receips/receipe-edit/receipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,11 @@ import { ShoppingListService } from './shoping-list/shopping-list.service';
     ShoppingEditComponent,
     ReceipeListComponent,
     ReceipeItemComponent,
-    ReceipeDetailComponent,DropdownDirective, ReceipeStartComponent
+    ReceipeDetailComponent,DropdownDirective, ReceipeStartComponent, ReceipeEditComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,   
+    FormsModule,
     AppRoutingModule
   ],
   providers: [ShoppingListService],
